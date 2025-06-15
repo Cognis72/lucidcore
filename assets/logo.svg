@@ -1,0 +1,108 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff006e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="logoGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer ring -->
+  <circle cx="25" cy="25" r="22" fill="none" stroke="url(#logoGradient)" stroke-width="2" opacity="0.6" filter="url(#logoGlow)"/>
+  
+  <!-- Inner core -->
+  <circle cx="25" cy="25" r="12" fill="url(#logoGradient)" opacity="0.8" filter="url(#logoGlow)"/>
+  
+  <!-- Central neural node -->
+  <circle cx="25" cy="25" r="6" fill="#ffffff" opacity="0.9"/>
+  <circle cx="25" cy="25" r="3" fill="#00d4ff">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Neural connections -->
+  <g stroke="url(#logoGradient)" stroke-width="1.5" fill="none" opacity="0.8">
+    <!-- Top connections -->
+    <line x1="25" y1="13" x2="25" y2="5">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="25" y1="37" x2="25" y2="45">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Side connections -->
+    <line x1="13" y1="25" x2="5" y2="25">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.25s" repeatCount="indefinite"/>
+    </line>
+    <line x1="37" y1="25" x2="45" y2="25">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.75s" repeatCount="indefinite"/>
+    </line>
+    
+    <!-- Diagonal connections -->
+    <line x1="18.8" y1="18.8" x2="13.6" y2="13.6">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="31.2" y1="31.2" x2="36.4" y2="36.4">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+    </line>
+    <line x1="31.2" y1="18.8" x2="36.4" y2="13.6">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.35s" repeatCount="indefinite"/>
+    </line>
+    <line x1="18.8" y1="31.2" x2="13.6" y2="36.4">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.85s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Connection nodes -->
+  <g fill="url(#logoGradient)" opacity="0.9">
+    <circle cx="25" cy="7" r="1.5"/>
+    <circle cx="25" cy="43" r="1.5"/>
+    <circle cx="7" cy="25" r="1.5"/>
+    <circle cx="43" cy="25" r="1.5"/>
+    <circle cx="15.2" cy="15.2" r="1"/>
+    <circle cx="34.8" cy="34.8" r="1"/>
+    <circle cx="34.8" cy="15.2" r="1"/>
+    <circle cx="15.2" cy="34.8" r="1"/>
+  </g>
+  
+  <!-- Data flow particles -->
+  <g fill="#00d4ff" opacity="0.7">
+    <circle cx="25" cy="10" r="0.8">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0,0; 0,10; 0,0" 
+                        dur="2s" 
+                        repeatCount="indefinite"/>
+    </circle>
+    <circle cx="40" cy="25" r="0.8">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0,0; -10,0; 0,0" 
+                        dur="2s" 
+                        begin="0.5s"
+                        repeatCount="indefinite"/>
+    </circle>
+    <circle cx="25" cy="40" r="0.8">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0,0; 0,-10; 0,0" 
+                        dur="2s" 
+                        begin="1s"
+                        repeatCount="indefinite"/>
+    </circle>
+    <circle cx="10" cy="25" r="0.8">
+      <animateTransform attributeName="transform" 
+                        type="translate" 
+                        values="0,0; 10,0; 0,0" 
+                        dur="2s" 
+                        begin="1.5s"
+                        repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
