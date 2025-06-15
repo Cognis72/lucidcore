@@ -64,7 +64,6 @@ JavaScript (EN/TH toggle)
 This project is licensed under the MIT License.
 โปรเจกต์นี้ใช้สัญญาอนุญาตแบบ MIT (ใช้งานได้อิสระพร้อมเครดิต)
 
-🔗 View License
 
 🧠 About LucidCore | เกี่ยวกับโปรเจกต์
 LucidCore is a vision for a brain-AI interface that allows learning, social interaction, and immersive dreaming experiences in a connected, conscious virtual ecosystem.
