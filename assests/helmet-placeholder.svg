@@ -1,0 +1,110 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="helmetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff006e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="visorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background glow -->
+  <circle cx="150" cy="150" r="140" fill="none" stroke="url(#helmetGradient)" stroke-width="2" opacity="0.3" filter="url(#glow)"/>
+  
+  <!-- Main helmet body -->
+  <path d="M150 50 C100 50 60 90 60 140 L60 180 C60 220 90 250 130 250 L170 250 C210 250 240 220 240 180 L240 140 C240 90 200 50 150 50 Z" 
+        fill="url(#helmetGradient)" 
+        stroke="#00d4ff" 
+        stroke-width="2" 
+        filter="url(#glow)"/>
+  
+  <!-- Visor -->
+  <path d="M150 70 C110 70 80 100 80 140 L80 160 C80 190 105 215 135 215 L165 215 C195 215 220 190 220 160 L220 140 C220 100 190 70 150 70 Z" 
+        fill="url(#visorGradient)" 
+        stroke="#00d4ff" 
+        stroke-width="1.5" 
+        opacity="0.9"/>
+  
+  <!-- Neural interface ports -->
+  <circle cx="100" cy="120" r="8" fill="#ff006e" filter="url(#innerGlow)"/>
+  <circle cx="200" cy="120" r="8" fill="#ff006e" filter="url(#innerGlow)"/>
+  <circle cx="120" cy="100" r="6" fill="#7c3aed" filter="url(#innerGlow)"/>
+  <circle cx="180" cy="100" r="6" fill="#7c3aed" filter="url(#innerGlow)"/>
+  
+  <!-- Central processing unit -->
+  <rect x="135" y="90" width="30" height="15" rx="3" fill="#00d4ff" filter="url(#innerGlow)"/>
+  <rect x="140" y="93" width="20" height="3" fill="#ffffff" opacity="0.8"/>
+  <rect x="140" y="97" width="20" height="3" fill="#ffffff" opacity="0.6"/>
+  <rect x="140" y="101" width="20" height="3" fill="#ffffff" opacity="0.4"/>
+  
+  <!-- Side panels -->
+  <path d="M70 140 L90 135 L90 155 L70 160 Z" fill="#7c3aed" opacity="0.8" filter="url(#innerGlow)"/>
+  <path d="M230 140 L210 135 L210 155 L230 160 Z" fill="#7c3aed" opacity="0.8" filter="url(#innerGlow)"/>
+  
+  <!-- Bottom connection ports -->
+  <rect x="135" y="230" width="30" height="10" rx="5" fill="#ff006e" filter="url(#innerGlow)"/>
+  <rect x="110" y="240" width="15" height="8" rx="4" fill="#00d4ff" filter="url(#innerGlow)"/>
+  <rect x="175" y="240" width="15" height="8" rx="4" fill="#00d4ff" filter="url(#innerGlow)"/>
+  
+  <!-- Decorative elements -->
+  <line x1="60" y1="180" x2="80" y2="175" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
+  <line x1="240" y1="180" x2="220" y2="175" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
+  <line x1="65" y1="195" x2="85" y2="190" stroke="#ff006e" stroke-width="1.5" opacity="0.6"/>
+  <line x1="235" y1="195" x2="215" y2="190" stroke="#ff006e" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Holographic display lines -->
+  <g opacity="0.7">
+    <line x1="85" y1="140" x2="105" y2="140" stroke="#00d4ff" stroke-width="1" stroke-dasharray="2,2">
+      <animate attributeName="stroke-dashoffset" values="0;4" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="195" y1="140" x2="215" y2="140" stroke="#00d4ff" stroke-width="1" stroke-dasharray="2,2">
+      <animate attributeName="stroke-dashoffset" values="0;4" dur="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="85" y1="150" x2="105" y2="150" stroke="#ff006e" stroke-width="1" stroke-dasharray="3,3">
+      <animate attributeName="stroke-dashoffset" values="0;6" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="195" y1="150" x2="215" y2="150" stroke="#ff006e" stroke-width="1" stroke-dasharray="3,3">
+      <animate attributeName="stroke-dashoffset" values="0;6" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Power indicator -->
+  <circle cx="150" cy="110" r="4" fill="#00ff00" filter="url(#innerGlow)">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Neural activity visualization -->
+  <g opacity="0.8">
+    <path d="M120 130 Q140 120 160 130 Q180 140 200 130" 
+          fill="none" 
+          stroke="#00d4ff" 
+          stroke-width="1.5" 
+          stroke-dasharray="2,2">
+      <animate attributeName="stroke-dashoffset" values="0;4" dur="0.8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M120 145 Q140 155 160 145 Q180 135 200 145" 
+          fill="none" 
+          stroke="#ff006e" 
+          stroke-width="1.5" 
+          stroke-dasharray="2,2">
+      <animate attributeName="stroke-dashoffset" values="4;0" dur="1.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>
